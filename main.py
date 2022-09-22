@@ -9,4 +9,4 @@ anomalies = threshold_ad.detect(s)
 from adtk.visualization import plot
 t = plot(s, anomaly=anomalies, ts_linewidth=1, ts_markersize=3, anomaly_markersize=5, anomaly_color='red', anomaly_tag="marker")
 from matplotlib import pyplot as plt
-plt.show()
+plt.savefig('foo.png')
