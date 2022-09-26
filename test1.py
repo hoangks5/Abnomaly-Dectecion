@@ -8,8 +8,9 @@ app = FastAPI()
 @app.post("/upload")
 def upload(file: UploadFile = File(...)):
     x = []
-    contents = file.file.read().splitlines()
-    contents = contents.decode("utf-8")
+    contents = file.file.read()
+    contents = contents.decode("utf-8").splitlines()
+    
     for line in contents[1:]:
         x.append(line.split(',')[1])
     return x
