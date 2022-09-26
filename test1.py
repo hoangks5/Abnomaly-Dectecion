@@ -5,11 +5,11 @@ import csv
 import datetime as dt
 app = FastAPI()
 
-
+x = []
+y = []
 @app.post("/upload")
 def upload(file: UploadFile = File(...)):
-    x = []
-    y = []
+    
     contents = file.file.read()
     contents = contents.decode("utf-8").splitlines()
     
@@ -19,6 +19,6 @@ def upload(file: UploadFile = File(...)):
         y.append(line.split(',')[0])
         
     
-    plt.plot(range(len(x)),x)
-    plt.show()
+plt.plot(range(len(x)),x)
+plt.show()
   
