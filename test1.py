@@ -14,9 +14,12 @@ async def post_endpoint(in_file: UploadFile=File(...)):
         content = await in_file.read()  # async read
         await out_file.write(content)  # async write
     import pandas as pd
-    s = pd.read_csv('./BTC_USD.csv', index_col="Date", parse_dates=True, squeeze=True)
+    s = pd.read_csv('./ok.csv', index_col="Date", parse_dates=True, squeeze=True)
     from adtk.data import validate_series
     s = validate_series(s)
+    
+    from adtk.visualization import plot
+    plot(s, anomaly=anomalies, ts_linewidth=1, ts_markersize=3, anomaly_markersize=5, anomaly_color='red', anomaly_tag="marker");
     return {"Result": "OK"}
     
   
