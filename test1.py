@@ -8,5 +8,5 @@ app = FastAPI()
 @app.post("/upload")
 def upload(file: UploadFile = File(...)):
     contents = file.file.read()
-    
+    for line in contents[1:]:
   
