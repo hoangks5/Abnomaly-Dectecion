@@ -9,5 +9,6 @@ def upload(file: UploadFile = File(...)):
     contents = file.file.read()
 
     contents.decode("utf-8") 
-    return print(type(contents))
+    print(type(contents))
+    return 0
   
