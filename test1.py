@@ -8,7 +8,8 @@ app = FastAPI()
 
 @app.post("/upload")
 def upload(file: UploadFile = File(...)):
-    
+    x = []
+    y = []
     contents = file.file.read()
     contents = contents.decode("utf-8").splitlines()
     
@@ -16,6 +17,6 @@ def upload(file: UploadFile = File(...)):
         x.append(float(line.split(',')[1]))
        
         y.append(line.split(',')[0])
-        
+    
     
   
