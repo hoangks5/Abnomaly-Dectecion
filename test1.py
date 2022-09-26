@@ -9,5 +9,5 @@ app = FastAPI()
 def upload(file: UploadFile = File(...)):
     contents = file.file.read().splitlines()
     for line in contents[1:]:
-        line.split
+        line.split(',')[1]
   
