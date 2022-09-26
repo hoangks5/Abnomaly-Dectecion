@@ -8,6 +8,5 @@ app = FastAPI()
 def upload(file: UploadFile = File(...)):
     contents = file.file.read()
     contents = contents.decode("utf-8")
-    print(type(t))
-    return 0
+    return contents
   
