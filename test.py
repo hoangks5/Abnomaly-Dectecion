@@ -1,10 +1,13 @@
-from fastapi import FastAPI
-
+from fastapi import FastAPI, File, UploadFile
+import pandas as pd
+import matplotlib.pyplot as plt
 app = FastAPI()
 
-fake_items_db = [{"item_name": "Foo"}, {"item_name": "Bar"}, {"item_name": "Baz"}] # pair format: key-value
 
+@app.post("/upload")
+def upload(file: UploadFile = File(...)):
+    contents = file.file.read()
 
-@app.get("/items/")
-async def read_item(skip: int = 0, limit: int = 10):
-    return fake_items_db[skip : skip + limit] # trả về dữ liệu từ skip đến skip + limit
+    
+    return contents.splitlines()[1]
+ 
