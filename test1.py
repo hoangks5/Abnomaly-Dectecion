@@ -19,6 +19,6 @@ def upload(file: UploadFile = File(...)):
         y.append(line.split(',')[0])
         
     
-    plt.plot(x,len(x))
+    plt.plot(x,range(len(x)))
     plt.show()
   
