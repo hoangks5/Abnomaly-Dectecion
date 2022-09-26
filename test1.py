@@ -3,20 +3,17 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import csv
 import datetime as dt
+import aiofiles
 app = FastAPI()
 
 
-@app.post("/upload")
-def upload(file: UploadFile = File(...)):
-    x = []
-    y = []
-    contents = file.file.read()
-    contents = contents.decode("utf-8").splitlines()
-    
-    for line in contents[1:]:
-        x.append(float(line.split(',')[1]))
-       
-        y.append(line.split(',')[0])
-    
+@app.post("/")
+async def post_endpoint(in_file: UploadFile=File(...)):
+    # ...
+    async with aiofiles.open(out_file_path, 'wb') as out_file:
+        content = await in_file.read()  # async read
+        await out_file.write(content)  # async write
+
+    return {"Result": "OK"}
     
   
