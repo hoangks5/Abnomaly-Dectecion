@@ -22,7 +22,7 @@ async def post_endpoint(in_file: UploadFile=File(...)):
     threshold_ad = ThresholdAD(high=50000, low=30000)
     anomalies = threshold_ad.detect(s)
     from adtk.visualization import plot
-    plot(s, anomaly=anomalies, ts_linewidth=1, ts_markersize=3, anomaly_markersize=5, anomaly_color='red', anomaly_tag="marker");
+    t = plot(s, anomaly=anomalies, ts_linewidth=1, ts_markersize=3, anomaly_markersize=5, anomaly_color='red', anomaly_tag="marker");
     return {"Result": "OK"}
     
   
