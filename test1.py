@@ -7,7 +7,7 @@ app = FastAPI()
 
 @app.post("/upload")
 def upload(file: UploadFile = File(...)):
-    contents = file.file.read()
+    contents = file.file.read().splitlines()
     for line in contents[1:]:
-        line.spl
+        line.split
   
