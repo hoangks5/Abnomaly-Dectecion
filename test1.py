@@ -26,4 +26,5 @@ def upload(file: UploadFile = File(...)):
     plt.gca().xaxis.set_major_locator(mdates.DayLocator())
     plt.plot(x,y)
     plt.gcf().autofmt_xdate()
+    plt.show()
   
