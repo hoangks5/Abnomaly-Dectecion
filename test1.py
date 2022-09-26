@@ -14,7 +14,7 @@ def upload(file: UploadFile = File(...)):
     contents = contents.decode("utf-8").splitlines()
     
     for line in contents[1:]:
-        x.append(line.split(',')[1])
+        x.append(float(line.split(',')[1]))
        
         y.append(line.split(',')[0])
         
