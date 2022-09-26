@@ -9,7 +9,7 @@ app = FastAPI()
 def upload(file: UploadFile = File(...)):
     x = []
     contents = file.file.read().splitlines()
-    contents = 
+    contents = contents.decode("utf-8")
     for line in contents[1:]:
         x.append(line.split(',')[1])
     return x
