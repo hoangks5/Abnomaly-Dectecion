@@ -8,8 +8,5 @@ app = FastAPI()
 @app.post("/upload")
 def upload(file: UploadFile = File(...)):
     contents = file.file.read()
-    contents = contents.decode("utf-8")
-    csv_data = csv.reader(contents)
-    print(csv_data['Date'])
-    return 0
+    
   
