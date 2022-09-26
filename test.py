@@ -11,4 +11,4 @@ def upload(file: UploadFile = File(...)):
     contents.to_csv('GeeksforGeeks.csv', 
                   index = None)
     return contents.splitlines()[1]
- 
+  
