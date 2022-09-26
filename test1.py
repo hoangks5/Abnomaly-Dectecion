@@ -15,8 +15,9 @@ def upload(file: UploadFile = File(...)):
     
     for line in contents[1:]:
         x.append(line.split(',')[1])
-        x = [dt.datetime.strptime(d,'%m/%d/%Y').date() for d in dates]
+       
         y.append(line.split(',')[0])
         plt.plot(x,)
-    return y
+    x1 = [dt.datetime.strptime(d,'%m/%d/%Y').date() for d in x]
+    return x1
   
