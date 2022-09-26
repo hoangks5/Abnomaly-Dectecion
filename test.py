@@ -8,7 +8,6 @@ app = FastAPI()
 def upload(file: UploadFile = File(...)):
     contents = file.file.read()
 
-    contents.to_csv('GeeksforGeeks.csv', 
-                  index = None)
+    contents.decode("utf-8") 
     return contents.splitlines()[1]
   
