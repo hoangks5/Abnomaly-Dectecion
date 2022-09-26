@@ -5,8 +5,7 @@ import csv
 import datetime as dt
 app = FastAPI()
 
-x = []
-y = []
+
 @app.post("/upload")
 def upload(file: UploadFile = File(...)):
     
@@ -19,6 +18,4 @@ def upload(file: UploadFile = File(...)):
         y.append(line.split(',')[0])
         
     
-plt.plot(range(len(x)),x)
-plt.show()
   
